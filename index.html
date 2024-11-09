@@ -26,6 +26,11 @@
     const names = ["Body", "Glass", "Video Accessories", "Photo Accessories", "Other Accessories", "Memory Cards Per Body", "Batteries Per Body"];
     const numberOfNumbers = names.length; // Liczba nazw określa liczbę generowanych liczb
 
+     // Predefiniowane nazwy dla drugiego zestawu liczb
+    const names2 = ["Budget"];
+    const numberOfNumbers2 = names2.length;
+
+
     // Tablica predefiniowanych słów
     const words = ["MediaExpert", "X-Kom", "Morele", "RTVeuroAGD", "Cyfrowe", "Fotoforma", "AB Foto", "NoToPstryk", "B&H Photo", "You Can Choose Any Store", "You Can Choose Any Store", "You Can Choose Any Store", "You Can Choose Any Store"];
 
@@ -39,6 +44,11 @@
             const randomNumber = Math.floor(Math.random() * 20) + 1; // Liczby od 1 do 20
             const name = names[i]; // Pobieramy predefiniowaną nazwę
             numberOutput.innerHTML += `<p>${name}: ${randomNumber}</p>`;
+        }
+	  for (let i = 0; i < numberOfNumbers2; i++) {
+            const randomNumber2 = Math.floor(Math.random() * 1000000) + 1000; // Liczby od 1 do 50 (przykładowy zakres)
+            const name2 = names2[i]; // Pobieramy predefiniowaną nazwę dla drugiego zestawu
+            numberOutput2.innerHTML += `<p>${name2}: ${randomNumber2}</p>`;
         }
 
         // Losowanie słowa
