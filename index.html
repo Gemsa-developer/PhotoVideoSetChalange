@@ -9,17 +9,26 @@
 	</head>
 	
 	<body style="background-color: white"> 
-		<h2>Generator losowych liczb</h2>
+		<h2>Generator losowych liczb z własnymi nazwami</h2>
+
+<!-- Pola do wpisania nazw dla poszczególnych liczb -->
+<div id="nameInputs">
+    <label>Nazwa dla liczby 1: <input type="text" id="name1" placeholder="Podaj nazwę"></label><br>
+    <label>Nazwa dla liczby 2: <input type="text" id="name2" placeholder="Podaj nazwę"></label><br>
+    <label>Nazwa dla liczby 3: <input type="text" id="name3" placeholder="Podaj nazwę"></label><br>
+    <label>Nazwa dla liczby 4: <input type="text" id="name4" placeholder="Podaj nazwę"></label><br>
+    <label>Nazwa dla liczby 5: <input type="text" id="name5" placeholder="Podaj nazwę"></label><br>
+</div>
 
 <!-- Przycisk do generowania liczb -->
 <button onclick="generateNumbers()">Generuj liczby</button>
 
-<!-- Miejsce na wygenerowane liczby -->
+<!-- Miejsce na wygenerowane liczby z własnymi nazwami -->
 <div id="output"></div>
 
 <script>
     // Ustawiamy predefiniowaną liczbę losowych liczb do wygenerowania
-    const numberOfNumbers = 10; // np. 10 liczb
+    const numberOfNumbers = 5; // Użytkownik może ustawić dowolną liczbę
 
     // Funkcja do generowania losowych liczb
     function generateNumbers() {
@@ -28,13 +37,18 @@
         // Czyścimy wcześniejsze wyniki
         output.innerHTML = "";
 
-        // Generowanie liczb i wyświetlanie ich
-        for (let i = 0; i < numberOfNumbers; i++) {
-            const randomNumber = Math.floor(Math.random() * 20) + 2; // Liczby od 2 do 20
-            output.innerHTML += `<p>${randomNumber}</p>`;
+        // Generowanie liczb i wyświetlanie ich z własnymi nazwami
+        for (let i = 1; i <= numberOfNumbers; i++) {
+            // Pobieramy nazwę z odpowiedniego pola tekstowego
+            const name = document.getElementById(`name${i}`).value || `Liczba ${i}`;
+            const randomNumber = Math.floor(Math.random() * 100) + 1; // Liczby od 1 do 100
+
+            // Wyświetlamy liczbę z przypisaną nazwą
+            output.innerHTML += `<p>${name}: ${randomNumber}</p>`;
         }
     }
 </script>
+
 
   </body>
 </html>
