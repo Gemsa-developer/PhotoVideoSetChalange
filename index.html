@@ -11,35 +11,30 @@
 	<body style="background-color: white"> 
 		<h2>Generator losowych liczb</h2>
 
-<!-- Formularz do określenia ilości liczb -->
-<label for="count">Ile liczb chcesz wygenerować?</label>
-<input type="number" id="count" min="1" placeholder="Wpisz liczbę">
+<!-- Przycisk do generowania liczb -->
 <button onclick="generateNumbers()">Generuj liczby</button>
 
 <!-- Miejsce na wygenerowane liczby -->
 <div id="output"></div>
 
 <script>
+    // Ustawiamy predefiniowaną liczbę losowych liczb do wygenerowania
+    const numberOfNumbers = 10; // np. 10 liczb
+
     // Funkcja do generowania losowych liczb
     function generateNumbers() {
-        const count = document.getElementById("count").value;
         const output = document.getElementById("output");
 
         // Czyścimy wcześniejsze wyniki
         output.innerHTML = "";
 
-        // Sprawdzamy, czy podana wartość jest poprawna
-        if (isNaN(count) || count <= 0) {
-            output.innerHTML = "Proszę podać prawidłową liczbę.";
-            return;
-        }
-
         // Generowanie liczb i wyświetlanie ich
-        for (let i = 0; i < count; i++) {
+        for (let i = 0; i < numberOfNumbers; i++) {
             const randomNumber = Math.floor(Math.random() * 100) + 1; // Liczby od 1 do 100
             output.innerHTML += `<p>${randomNumber}</p>`;
         }
     }
 </script>
+
   </body>
 </html>
