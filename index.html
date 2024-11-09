@@ -1,50 +1,45 @@
+
 <html>
-  <head>
-    <script>
-      function generateNumber() {
-        var number = document.getElementById("generate");
-        number.innerHTML = Math.floor((Math.random()* 100) + 1);
-      }
-    </script>
-    <style>
-      html {
-       background-color: chartreuse;
-        border-color: 1px solid;
-      }
-      button {
-          display: inline-block;
-  padding: 15px 25px;
-  font-size: 24px;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  outline: none;
-  color: #fff;
-  background-color: #4CAF50;
-  border: none;
-  border-radius: 15px;
-  box-shadow: 0 9px #999;
-        font-family: monospace;
-      }
-      button:hover {background-color: #3e8e41}
-      
-button:active {
-  background-color: #3e8e41;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
-}
-      p {
-        font-size: 25px;
-        font-family: monospace;
-      }
-    </style>
-  </head>
-  <body>
-    <center>
-      
-    <p> Click me to generate a random number</p>
-    <button onclick="generateNumber()">click me</button>
-    <p id="generate"></p>
-      <center>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="Content-Language" content="pl" />
+		<meta name="description" content=Playlisty z przygotowaniem do egzaminu Ósmoklasisty" />
+		<meta name="keywords" content="E8, egazamin ósmoklasisty, egazamin, nauka, polski, matematyka, anglik, angielski, matma, polak, aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/>
+		<title>Powtórzenie do E8</title>
+	</head>
+	
+	<body style="background-color: white"> 
+		<h2>Generator losowych liczb</h2>
+
+<!-- Formularz do określenia ilości liczb -->
+<label for="count">Ile liczb chcesz wygenerować?</label>
+<input type="number" id="count" min="1" placeholder="Wpisz liczbę">
+<button onclick="generateNumbers()">Generuj liczby</button>
+
+<!-- Miejsce na wygenerowane liczby -->
+<div id="output"></div>
+
+<script>
+    // Funkcja do generowania losowych liczb
+    function generateNumbers() {
+        const count = document.getElementById("count").value;
+        const output = document.getElementById("output");
+
+        // Czyścimy wcześniejsze wyniki
+        output.innerHTML = "";
+
+        // Sprawdzamy, czy podana wartość jest poprawna
+        if (isNaN(count) || count <= 0) {
+            output.innerHTML = "Proszę podać prawidłową liczbę.";
+            return;
+        }
+
+        // Generowanie liczb i wyświetlanie ich
+        for (let i = 0; i < count; i++) {
+            const randomNumber = Math.floor(Math.random() * 100) + 1; // Liczby od 1 do 100
+            output.innerHTML += `<p>${randomNumber}</p>`;
+        }
+    }
+</script>
   </body>
 </html>
