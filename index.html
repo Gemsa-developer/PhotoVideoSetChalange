@@ -39,7 +39,30 @@
         }
     }
 </script>
+<h2>Losowanie słów</h2>
 
+<!-- Przycisk do losowania słów -->
+<button onclick="drawWord()">Wylosuj słowo</button>
+
+<!-- Miejsce na wyświetlenie wylosowanego słowa -->
+<div id="output" style="margin-top: 20px; font-size: 1.5em;"></div>
+
+<script>
+    // Tablica predefiniowanych słów
+    const words = ["MediaExpert", "X-Kom", "Morele", "RTVeuroAGD", "Cyfrowe", "Fotoforma", "NoToPstryk", "abfoto", "B&H Photo"];
+
+    // Funkcja do losowania słowa
+    function drawWord() {
+        const output = document.getElementById("output");
+
+        // Losowanie indeksu słowa
+        const randomIndex = Math.floor(Math.random() * words.length);
+        const randomWord = words[randomIndex];
+
+        // Wyświetlenie wylosowanego słowa
+        output.textContent = `Wylosowane słowo: ${randomWord}`;
+    }
+</script>
 
   </body>
 </html>
