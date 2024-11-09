@@ -9,30 +9,18 @@
 	</head>
 	
 	<body style="background-color: white"> 
-		<h2>Generator losowych liczb z własnymi nazwami</h2>
-
-<!-- Pola do wpisania nazw dla poszczególnych liczb -->
-<div id="nameInputs">
-    <label>Nazwa dla liczby 1: <input type="text" id="name1" placeholder="Body"></label><br>
-    <label>Nazwa dla liczby 2: <input type="text" id="name2" placeholder="obiektyw"></label><br>
-    <label>Nazwa dla liczby 3: <input type="text" id="name3" placeholder="akcesoria foto-video"></label><br>
-    <label>Nazwa dla liczby 4: <input type="text" id="name4" placeholder="akcesoria audio"></label><br>
-    <label>Nazwa dla liczby 5: <input type="text" id="name5" placeholder="Karty Pamięci per body"></label><br>
-    <label>Nazwa dla liczby 6: <input type="text" id="name6" placeholder="Karty Pamięci per body"></label><br>
-    <label>Nazwa dla liczby 7: <input type="text" id="name7" placeholder="Baterie Per Body"></label><br>
-    <label>Nazwa dla liczby 8: <input type="text" id="name8" placeholder="Akcesoria inne"></label><br>
-    <label>Nazwa dla liczby 9: <input type="text" id="name9" placeholder="Sklepy"></label><br>
-</div>
+		<h2>Generator losowych liczb z predefiniowanymi nazwami</h2>
 
 <!-- Przycisk do generowania liczb -->
 <button onclick="generateNumbers()">Generuj liczby</button>
 
-<!-- Miejsce na wygenerowane liczby z własnymi nazwami -->
+<!-- Miejsce na wygenerowane liczby z predefiniowanymi nazwami -->
 <div id="output"></div>
 
 <script>
-    // Ustawiamy predefiniowaną liczbę losowych liczb do wygenerowania
-    const numberOfNumbers = 5; // Użytkownik może ustawić dowolną liczbę
+    // Ustawiamy predefiniowane nazwy oraz liczbę losowych liczb do wygenerowania
+    const names = ["Body", "Obiektywy", "Akcesoria Video", "Akcesoria Foto", "Akcesoria Inne", "Karty Pamięci Per Body"];
+    const numberOfNumbers = names.length; // Liczba nazw określa liczbę generowanych liczb
 
     // Funkcja do generowania losowych liczb
     function generateNumbers() {
@@ -41,11 +29,10 @@
         // Czyścimy wcześniejsze wyniki
         output.innerHTML = "";
 
-        // Generowanie liczb i wyświetlanie ich z własnymi nazwami
-        for (let i = 1; i <= numberOfNumbers; i++) {
-            // Pobieramy nazwę z odpowiedniego pola tekstowego
-            const name = document.getElementById(`name${i}`).value || `Liczba ${i}`;
+        // Generowanie liczb i wyświetlanie ich z predefiniowanymi nazwami
+        for (let i = 0; i < numberOfNumbers; i++) {
             const randomNumber = Math.floor(Math.random() * 100) + 1; // Liczby od 1 do 100
+            const name = names[i]; // Pobieramy predefiniowaną nazwę
 
             // Wyświetlamy liczbę z przypisaną nazwą
             output.innerHTML += `<p>${name}: ${randomNumber}</p>`;
