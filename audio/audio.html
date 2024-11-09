@@ -1,0 +1,77 @@
+
+
+
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="Content-Language" content="pl" />
+		<meta name="description" content=Generator "Dream Set Of Audio Tech"" />
+		<meta name="keywords" content="Dream Tech Set, Tech Set, Audio Tech/>
+		<title>Dream Audio Tech Set Challange</title>
+	</head>
+	<body style="background-color: white"> 
+<a name="audio"> </a>
+<a href="https://gemsa-developer.github.io/PhotoVideoSetChalange/">home</a>
+		
+<h1>Dream Set Of Audio Tech</h1>	
+<p>This is fun way of lerning about Audio tech, so klick the button, and look. This button will generate random amounts betwen 1 and 20. This numbers symbolize amount of listed gear what you will find at generated shop. </p>
+<h2>Dream Set Of Imaging Tech Generator</h2>
+
+
+<!-- Przycisk do losowania liczb i słowa -->
+<button onclick="drawNumbersAndWord()">Generate</button>
+
+<!-- Miejsce na wyświetlenie wylosowanych liczb z pierwszego zestawu -->
+<div id="numberOutput1" style="margin-top: 20px;"></div>
+
+<!-- Miejsce na wyświetlenie wylosowanych liczb z drugiego zestawu -->
+<div id="numberOutput2" style="margin-top: 20px;"></div>
+
+<!-- Miejsce na wyświetlenie wylosowanego słowa -->
+<div id="wordOutput" style="margin-top: 20px; font-size: 1.5em;"></div>
+
+<script>
+    // Predefiniowane nazwy i liczba losowych liczb do wygenerowania dla pierwszego zestawu
+    const names1 = ["Mixer", "Accessories", "Cables", "Cables2", "Speakers", "StageBox"];
+    const numberOfNumbers1 = names1.length;
+
+    // Predefiniowane nazwy dla drugiego zestawu liczb
+    const names2 = ["Budget"];
+    const numberOfNumbers2 = names2.length;
+
+    // Tablica predefiniowanych słów
+    const words = ["MediaExpert", "X-Kom", "Morele", "RTVeuroAGD", "Allegro", "Amazon", "hurtowniamuzyczna", "sklep-benhringer", "skladmuzyczny", "You Can Choose Any Store", "You Can Choose Any Store", "You Can Choose Any Store", "You Can Choose Any Store"];
+
+    // Funkcja do losowania liczb i słowa
+    function drawNumbersAndWord() {
+        // Losowanie liczb z pierwszego zestawu
+        const numberOutput1 = document.getElementById("numberOutput1");
+        numberOutput1.innerHTML = "<h3>Amount Of Gear:</h3>";
+
+        for (let i = 0; i < numberOfNumbers1; i++) {
+            const randomNumber1 = Math.floor(Math.random() * 100) + 1; // Liczby od 1 do 100
+            const name1 = names1[i]; // Pobieramy predefiniowaną nazwę
+            numberOutput1.innerHTML += `<p>${name1}: ${randomNumber1}</p>`;
+        }
+
+        // Losowanie liczb z drugiego zestawu
+        const numberOutput2 = document.getElementById("numberOutput2");
+        numberOutput2.innerHTML = "<h3>Budget:</h3>";
+
+        for (let i = 0; i < numberOfNumbers2; i++) {
+            const randomNumber2 = Math.floor(Math.random() * 1000000) + 1000; // Liczby od 1 do 50 (przykładowy zakres)
+            const name2 = names2[i]; // Pobieramy predefiniowaną nazwę dla drugiego zestawu
+            numberOutput2.innerHTML += `<p>${name2}: ${randomNumber2}$</p>`;
+        }
+
+        // Losowanie słowa
+        const wordOutput = document.getElementById("wordOutput");
+        const randomIndex = Math.floor(Math.random() * words.length);
+        const randomWord = words[randomIndex];
+
+        wordOutput.textContent = `From Where?: ${randomWord}`;
+    }
+</script>
+
+</body>
+</html>
