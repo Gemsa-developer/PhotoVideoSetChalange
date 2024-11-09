@@ -22,11 +22,11 @@
 
 <script>
     // Predefiniowane nazwy i liczba losowych liczb do wygenerowania
-    const names = ["Wartość początkowa", "Druga liczba", "Trzecia wartość", "Liczba środkowa", "Ostatni wynik"];
+    const names = ["Body", "Glass", "Video Accessories", "Photo Accessories", "Other Accessories", "Memory Cards Per Body", "Batteries Per Body"];
     const numberOfNumbers = names.length; // Liczba nazw określa liczbę generowanych liczb
 
     // Tablica predefiniowanych słów
-    const words = ["jabłko", "banan", "gruszka", "pomarańcza", "śliwka", "truskawka", "wiśnia", "cytryna", "kiwi", "ananas"];
+    const words = ["MediaExpert", "X-Kom", "Morele", "RTVeuroAGD", "Cyfrowe", "Fotoforma", "AB Foto", "NoToPstryk", "B&H Photo", "You Can Choose Any Store"];
 
     // Funkcja do losowania liczb i słowa
     function drawNumbersAndWord() {
@@ -35,7 +35,7 @@
         numberOutput.innerHTML = "<h3>Wylosowane liczby:</h3>";
 
         for (let i = 0; i < numberOfNumbers; i++) {
-            const randomNumber = Math.floor(Math.random() * 20) + 1; // Liczby od 1 do 100
+            const randomNumber = Math.floor(Math.random() * 20) + 1; // Liczby od 1 do 20
             const name = names[i]; // Pobieramy predefiniowaną nazwę
             numberOutput.innerHTML += `<p>${name}: ${randomNumber}</p>`;
         }
