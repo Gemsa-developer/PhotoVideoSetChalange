@@ -9,7 +9,7 @@
 	</head>
 	<body style="background-color: white"> 
 	
-	<h2>Losowanie liczb i słów</h2>
+	<h2>Dream Set Of Imaging Tech</h2>
 
 <!-- Przycisk do losowania liczb i słów -->
 <button onclick="drawNumbersAndWord()">Wylosuj liczby i słowo</button>
@@ -32,7 +32,7 @@
     function drawNumbersAndWord() {
         // Losowanie liczb
         const numberOutput = document.getElementById("numberOutput");
-        numberOutput.innerHTML = "<h3>Wylosowane liczby:</h3>";
+        numberOutput.innerHTML = "<h3>Amount Of Gear:</h3>";
 
         for (let i = 0; i < numberOfNumbers; i++) {
             const randomNumber = Math.floor(Math.random() * 20) + 1; // Liczby od 1 do 20
@@ -45,7 +45,7 @@
         const randomIndex = Math.floor(Math.random() * words.length);
         const randomWord = words[randomIndex];
 
-        wordOutput.textContent = `Wylosowane słowo: ${randomWord}`;
+        wordOutput.textContent = `From Where?: ${randomWord}`;
 	    
     }
 </script>
