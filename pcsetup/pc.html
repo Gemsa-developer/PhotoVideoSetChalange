@@ -24,6 +24,9 @@
 <!-- Miejsce na wyświetlenie wylosowanych liczb z pierwszego zestawu -->
 <div id="numberOutput1" style="margin-top: 20px;"></div>
 
+<!-- Miejsce na wyświetlenie wylosowanych liczb z 3 zestawu -->
+<div id="numberOutput3" style="margin-top: 20px;"></div>
+
 <!-- Miejsce na wyświetlenie wylosowanych liczb z drugiego zestawu -->
 <div id="numberOutput2" style="margin-top: 20px;"></div>
 
@@ -34,6 +37,10 @@
     // Predefiniowane nazwy i liczba losowych liczb do wygenerowania dla pierwszego zestawu
     const names1 = ["PC", "Laptop", "Components", "Peryferials", "Accessories"];
     const numberOfNumbers1 = names1.length;
+
+    // Predefiniowane nazwy i liczba losowych liczb do wygenerowania dla 3 zestawu
+    const names3 = ["Components", "Peryferials", "Server Rack"];
+    const numberOfNumbers3 = names3.length;
 
     // Predefiniowane nazwy dla drugiego zestawu liczb
     const names2 = ["Budget"];
@@ -52,6 +59,16 @@
             const randomNumber1 = Math.floor(Math.random() * 20) + 1; // Liczby od 1 do 100
             const name1 = names1[i]; // Pobieramy predefiniowaną nazwę
             numberOutput1.innerHTML += `<p>${name1}: ${randomNumber1}</p>`;
+        }
+
+	            // Losowanie liczb z 3 zestawu
+        const numberOutput3 = document.getElementById("numberOutput3");
+        numberOutput3.innerHTML = "<h3></h3>";
+
+        for (let i = 0; i < numberOfNumbers3; i++) {
+            const randomNumber3 = Math.floor(Math.random() * 40) +5; // Liczby od 1 do 100
+            const name3 = names3[i]; // Pobieramy predefiniowaną nazwę
+            numberOutput3.innerHTML += `<p>${name3}: ${randomNumber3}</p>`;
         }
 
         // Losowanie liczb z drugiego zestawu
