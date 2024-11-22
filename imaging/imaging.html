@@ -29,6 +29,9 @@
 <!-- Miejsce na wyświetlenie wylosowanego słowa -->
 <div id="wordOutput" style="margin-top: 20px; font-size: 1.5em;"></div>
 
+<!-- Miejsce na wyświetlenie wylosowanego słowa -->
+<div id="wordOutput2" style="margin-top: 20px; font-size: 1.5em;"></div>
+
 <script>
     // Predefiniowane nazwy i liczba losowych liczb do wygenerowania dla pierwszego zestawu
     const names1 = ["Body", "Glass", "Video Accessories", "Photo Accessories", "Other Accessories", "Memory Cards Per Body", "Batteries Per Body"];
@@ -41,6 +44,9 @@
     // Tablica predefiniowanych słów
     const words = ["MediaExpert", "X-Kom", "Morele", "RTVeuroAGD", "Cyfrowe", "Fotoforma", "AB Foto", "NoToPstryk", "B&H Photo", "You Can Choose Any Store", "You Can Choose Any Store", "You Can Choose Any Store", "You Can Choose Any Store"];
 
+    // Tablica predefiniowanych słów
+    const words2 = ["Sony", "Canon", "Nikon"]
+	
     // Funkcja do losowania liczb i słowa
     function drawNumbersAndWord() {
         // Losowanie liczb z pierwszego zestawu
@@ -67,6 +73,13 @@
         const wordOutput = document.getElementById("wordOutput");
         const randomIndex = Math.floor(Math.random() * words.length);
         const randomWord = words[randomIndex];
+
+        wordOutput.textContent = `From Where?: ${randomWord}`;
+
+	// Losowanie słowa
+        const wordOutput2 = document.getElementById("wordOutput");
+        const randomIndex2 = Math.floor(Math.random() * words.length);
+        const randomWord2 = words[randomIndex];
 
         wordOutput.textContent = `From Where?: ${randomWord}`;
     }
