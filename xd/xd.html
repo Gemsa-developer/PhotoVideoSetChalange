@@ -1,0 +1,58 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="Content-Language" content="pl" />
+		<meta name="description" content=Generator "Dream Set Of Tech"" />
+		<meta name="keywords" content="Dream Tech Set, Tech Set/>
+		<title>Dream Tech Set Challange</title>
+      </head>
+<script>
+    const names1 = ["Body", "Glass", "Video Accessories", "Photo Accessories", "Other Accessories", "Memory Cards Per Body", "Batteries Per Body"];
+    const numberOfNumbers1 = names1.length;
+    const names2 = ["Budget"];
+    const numberOfNumbers2 = names2.length;
+
+    const words = ["MediaExpert", "X-Kom", "Morele", "RTVeuroAGD", "Cyfrowe", "Fotoforma", "AB Foto", "NoToPstryk", "B&H Photo", "You Can Choose Any Store", "You Can Choose Any Store", "You Can Choose Any Store", "You Can Choose Any Store"];
+    const words2 = ["Sony", "Canon", "Nikon", "Lumix", "Leica", "Fujifilm", "Hasselblad", "Samsung", "Red", "DJI", "BlackMagic Design", "Arri", "You Get To Choose"];
+
+    function drawNumbersAndWord() {
+        const numberOutput1 = document.getElementById("numberOutput1");
+        numberOutput1.innerHTML = "<h3>Amount Of Gear:</h3>";
+
+        let bodyValue = 0;
+
+        for (let i = 0; i < numberOfNumbers1; i++) {
+            let randomNumber1 = Math.floor(Math.random() * 20);
+            const name1 = names1[i];
+
+            // Save "Body" value and adjust "Glass" value
+            if (name1 === "Body") {
+                bodyValue = randomNumber1;
+            } else if (name1 === "Glass") {
+                randomNumber1 = Math.max(randomNumber1, bodyValue);
+            }
+
+            numberOutput1.innerHTML += `<p>${name1}: ${randomNumber1}</p>`;
+        }
+
+        const numberOutput2 = document.getElementById("numberOutput2");
+        numberOutput2.innerHTML = "<h3>Budget:</h3>";
+
+        for (let i = 0; i < numberOfNumbers2; i++) {
+            const randomNumber2 = Math.floor(Math.random() * 1000000);
+            const name2 = names2[i];
+            numberOutput2.innerHTML += `<p>${name2}: ${randomNumber2}$</p>`;
+        }
+
+        const wordOutput = document.getElementById("wordOutput");
+        const randomIndex = Math.floor(Math.random() * words.length);
+        const randomWord = words[randomIndex];
+        wordOutput.textContent = `From Where?: ${randomWord}`;
+
+        const wordOutput2 = document.getElementById("wordOutput2");
+        const randomIndex2 = Math.floor(Math.random() * words2.length);
+        const randomWord2 = words2[randomIndex2];
+        wordOutput2.textContent = `What Brand?: ${randomWord2}`;
+    }
+              </script>
+        </html>
