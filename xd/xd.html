@@ -52,7 +52,7 @@
             let bodyValue = 0; // Variable to store the value of "Body"
 
             for (let i = 0; i < numberOfNumbers1; i++) {
-                let randomNumber1 = Math.floor(Math.random() * 20);
+                let randomNumber1 = Math.floor(Math.random() * 21); // Random number between 0 and 20
                 const name1 = names1[i];
 
                 // Save "Body" value and adjust "Glass" value
@@ -62,14 +62,17 @@
                     randomNumber1 = Math.max(randomNumber1, bodyValue);
                 }
 
-                numberOutput1.innerHTML += `<p>${name1}: ${randomNumber1}</p>`;
+                // Convert 0 to "Infinity"
+                const displayNumber = randomNumber1 === 0 ? "Infinity" : randomNumber1;
+
+                numberOutput1.innerHTML += `<p>${name1}: ${displayNumber}</p>`;
             }
 
             const numberOutput2 = document.getElementById("numberOutput2");
             numberOutput2.innerHTML = "<h3>Budget:</h3>";
 
             for (let i = 0; i < numberOfNumbers2; i++) {
-                const randomNumber2 = Math.floor(Math.random() * 1000000);
+                const randomNumber2 = Math.floor(Math.random() * 1000000); // Random number for budget
                 const name2 = names2[i];
                 numberOutput2.innerHTML += `<p>${name2}: ${randomNumber2}$</p>`;
             }
